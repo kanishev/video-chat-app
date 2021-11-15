@@ -51,3 +51,14 @@ li.nav-item {
   border-radius: 5px;
   box-shadow: 1px 1px 5px grey;
 }
+
+.join-wrapper {
+  height: 48px;
+  border: 2px solid gray;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.join-input {
+  outline: none;
+}
