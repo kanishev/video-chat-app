@@ -1,22 +1,18 @@
-const joinBtn = document.querySelector(".join-btn");
-const joinInput = document.querySelector(".join-input");
-const creteBtns = document.querySelectorAll(".create-btn");
+import { MyApp } from "./app.js";
 
-document.querySelector(".focus-btn").onclick = function () {
-  joinInput.focus();
+window.onload = function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const meeitingId = urlParams.get("meetingId");
+  const meetingContainer = document.getElementById("meeting");
+
+  const userId = window.prompt("Enter your username");
+
+  if (!userId || !meeitingId) {
+    alert("User or room is missing!");
+    return (window.location.href = "/action.html");
+  }
+
+  meetingContainer.style.display = "block";
+
+  MyApp()._init(userId, meeitingId);
 };
-
-joinBtn.addEventListener("click", joinMeeting);
-creteBtns.forEach((b) => b.addEventListener("click", createMeeting));
-
-function createMeeting() {
-  let id = Math.floor(Math.random() * 10000000);
-  const path = window.location.origin + "?meetingId=" + id;
-  window.location.replace(path);
-}
-
-function joinMeeting() {
-  const id = joinInput.value;
-  const path = window.location.origin + "?meetingId=" + id;
-  window.location.replace(path);
-}

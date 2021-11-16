@@ -11,12 +11,14 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link rel="stylesheet" href="public/assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="public/assets/js/app.js"></script>
   </head>
   <body>
     <main class="main-wrap d-flex flex-column">
       <div class="top-block text-light">
         <div class="top-remote-video-show-wrap d-flex">
-          <div id="meetingContainer" class="w-75 d-none">
+          <div id="meeting" class="w-75 d-none">
             <div class="call-wrap" style="background-color: black">
               <div
                 class="video-wrap"
@@ -159,5 +161,6 @@
         </div>
       </div>
     </main>
+    <script src="public/assets/js/index.js" type="module"></script>
   </body>
 </html>
