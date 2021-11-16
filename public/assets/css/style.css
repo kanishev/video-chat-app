@@ -1,7 +1,3 @@
-body {
-  padding-top: 3.5rem;
-}
-
 .jumbotron {
   background-color: #ffffff;
 }
@@ -62,3 +58,80 @@ li.nav-item {
 .join-input {
   outline: none;
 }
+
+/* HOME PAGE*/
+
+.main-wrap {
+  background-color: rgb(31, 30, 30);
+}
+
+.top-block {
+  height: 90vh;
+  position: relative;
+}
+
+.video-wrap {
+  height: 60px;
+}
+
+.video-wrap > * {
+  flex: 1 1 250px;
+  border: 1px solid white;
+}
+
+.info {
+  position: absolute;
+  right: 0;
+  height: 8vh;
+  border-bottom-left-radius: 10px;
+}
+
+.info-parts {
+  position: relative;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgb(226, 225, 225);
+  border-radius: 5px;
+}
+
+.info-parts__count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  font-size: 15px;
+}
+
+.bottom-block {
+  padding: 0 20px;
+  box-shadow: 0 0 5px black;
+  z-index: 2;
+}
+
+.bottom-left {
+  position: relative;
+  padding: 5px;
+}
+
+.action-icon-style {
+  font-size: 8px !important;
+  height: 40px;
+  width: 40px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+}
+
+.option-wrap {
+  position: relative;
+}
+
+/* .action-icon-style .material-icons {
+  font-size: 18px;
+} */
