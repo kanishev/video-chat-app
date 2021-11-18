@@ -4,163 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Google Meet</title>
-    <link rel="stylesheet" href="public/assets/css/bootstrap.min.css" />
+    <title>Войти или Создать встречу</title>
+    <link rel="stylesheet" href="/public/assets/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
-    <link rel="stylesheet" href="public/assets/css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-    <script src="public/assets/js/app.js"></script>
+    <link rel="stylesheet" href="/public/assets/css/style.css" />
   </head>
   <body>
-    <main class="main-wrap d-flex flex-column">
-      <div class="top-block text-light">
-        <div class="top-remote-video-show-wrap d-flex">
-          <div id="meeting" class="w-75 d-none">
-            <div class="call-wrap" style="background-color: black">
-              <div
-                class="video-wrap"
-                id="divUsers"
-                style="display: flex; flex-wrap: wrap"
-              >
-                <div id="me" class="userbox display-center flex-column">
-                  <h2 class="display-center" style="font-size: 14px"></h2>
-                  <div class="display-center">
-                    <video autoplay muted id="localVideoPlayer"></video>
-                  </div>
-                </div>
-                <div
-                  id="otherTemplate"
-                  class="userbpx display-center flex-column"
-                  style="display: none"
-                >
-                  <h2 class="display-center" style="font-size: 14px"></h2>
-                  <div class="display-center">
-                    <video autoplay muted></video>
-                    <audio
-                      autoplay
-                      controls
-                      muted
-                      style="display: none"
-                    ></audio>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="
-            info
-            bg-light
-            text-secondary
-            w-25
-            d-flex
-            align-items-center
-            justify-content-between
-            pl-2
-            pr-2
-          "
-        >
-          <div class="info-parts pt-2 cursor-pointer">
-            <div class="info-parts__icon">
-              <span class="material-icons">people</span>
-            </div>
-            <div class="info-parts__count">2</div>
-          </div>
-          <div class="top-left-chat-wrap pt-2 cursor-pointer">
-            <span class="material-icons">message</span>
-          </div>
-          <div class="top-left-tome-wrap"></div>
-        </div>
+    <nav class="navbar navbar-expand-md">
+      <img
+        src="/public/assets/images/google-meet-icon.png"
+        class="logo"
+        alt="logo"
+      />
+      <a href="#" class="navbar-brand text-dark">Google Meet</a>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav mr-0">
+          <li class="nav-item">
+            <button
+              class="
+                btn btn-outline-secondary btn-lg
+                text-info
+                font-seight-bold
+                focus-btn
+              "
+            >
+              Join the meeting
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              class="btn btn-info btn-lg text-light font-seight-bold create-btn"
+            >
+              Start the meeting
+            </button>
+          </li>
+        </ul>
       </div>
-      <div
-        class="
-          bottom-block
-          bg-light
-          m-0
-          d-flex
-          justify-content-between
-          align-items-center
-        "
-      >
-        <div class="bottom-left d-flex" style="height: 10vh">
-          <div class="display-center cursor-pointer meeting-details-btn">
-            Meeting details
-            <span class="material-icons">keyboard_arrow_down</span>
-          </div>
+    </nav>
+
+    <main class="pt-5">
+      <div class="jumbotron h-100 d-flex justify-content-between">
+        <div class="container w-50 d-flex flex-column justify-content-between">
+          <h1 class="jumbotron-title">
+            Premium video meeting. Now it is available for free to everyone
+          </h1>
+          <p class="jumbotron-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+            excepturi dolorum, voluptatum quibusdam in recusandae voluptates
+            sint atque libero, nisi porro inventore obcaecati. Blanditiis, sequi
+            laudantium. Labore at facilis possimus inventore, illo maxime
+            dolorum reprehenderit, pariatur aut consectetur ratione sequi!
+          </p>
+          <ul class="display-center justify-content-start">
+            <li>
+              <button
+                class="
+                  btn btn-lg
+                  text-light
+                  font-weight-bold
+                  display-center
+                  create-btn
+                "
+                style="background-color: #01796b"
+              >
+                <span class="material-icons mr-2">video_call</span>
+                Start new meeting
+              </button>
+            </li>
+
+            <li class="pl-3">
+              <div
+                class="text-dark font-weight-bold display-center join-wrapper"
+                height
+              >
+                <span class="material-icons mr-2">keyboard</span>
+                <input
+                  type="text"
+                  placeholder="Enter a code"
+                  style="border: none"
+                  class="join-input"
+                />
+              </div>
+            </li>
+            <li class="text-dark pl-4 font-wieght-bold">
+              <button class="btn btn-lg btn-info join-btn">Join</button>
+            </li>
+          </ul>
         </div>
-        <div
-          class="bottom-middle d-flex align-items-center justify-content-center"
-          style="height: 10vh"
-        >
-          <div
-            class="
-              mic-toggle-wrap
-              action-icon-style
-              display-center
-              mr-2
-              cursor-pointer
-            "
-            id="muteMicro"
-          >
-            <span class="material-icons">mic_off</span>
-          </div>
-          <div
-            class="
-              end-call-wrap
-              action-icon-style
-              display-center
-              mr-2
-              cursor-pointer
-            "
-          >
-            <span class="material-icons text-danger">call</span>
-          </div>
-          <div
-            class="
-              video-toggle-wrap
-              action-icon-style
-              display-center
-              cursor-pointer
-            "
-          >
-            <span class="material-icons">videocam_off</span>
-          </div>
-        </div>
-        <div
-          class="
-            bottom-right
-            d-flex
-            justify-content-center
-            align-items-center
-            mr-3
-          "
-        >
-          <div
-            class="
-              present-now-wrap
-              d-flex
-              justify-content-center
-              flex-column
-              align-items-center
-              mr-5
-              cursor-pointer
-            "
-          >
-            <span class="material-icons">present_to_all</span>
-            <div>Present Now</div>
-          </div>
-          <div class="option-wrap cursor-pointer display-center">
-            <div class="option-icon">
-              <span class="material-icons">more_vert</span>
-            </div>
-          </div>
+        <div class="container w-50">
+          <img
+            src="/public/assets/images/google-meet-people.jpg"
+            alt="people"
+            class="signin-image"
+          />
         </div>
       </div>
     </main>
-    <script src="public/assets/js/index.js" type="module"></script>
+
+    <script src="/public/assets/js/actions.js"></script>
   </body>
 </html>

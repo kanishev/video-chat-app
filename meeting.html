@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Meet</title>
+    <link rel="stylesheet" href="public/assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="public/assets/css/style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="public/assets/js/app.js"></script>
+  </head>
+  <body>
+    <main class="main-wrap d-flex flex-column">
+      <div class="top-block text-light d-flex">
+        <div id="meeting" class="top-remote-video-show-wrap d-flex w-75"></div>
+        <div
+          class="
+            info
+            bg-light
+            text-secondary
+            w-25
+            d-flex
+            align-items-center
+            justify-content-between
+            pl-2
+            pr-2
+          "
+        >
+          <div class="info-parts pt-2 cursor-pointer">
+            <div class="info-parts__icon">
+              <span class="material-icons">people</span>
+            </div>
+            <div class="info-parts__count">2</div>
+          </div>
+          <div class="top-left-chat-wrap pt-2 cursor-pointer">
+            <span class="material-icons">message</span>
+          </div>
+          <div class="top-left-tome-wrap"></div>
+        </div>
+      </div>
+      <div
+        class="
+          bottom-block
+          bg-light
+          m-0
+          d-flex
+          justify-content-between
+          align-items-center
+        "
+      >
+        <div class="bottom-left d-flex" style="height: 10vh">
+          <div
+            class="
+              display-center
+              cursor-pointer
+              meeting-details-btn
+              flex-column
+            "
+          >
+            <span class="material-icons">message</span>
+            Чат
+          </div>
+          <div
+            class="
+              display-center
+              cursor-pointer
+              meeting-details-btn
+              flex-column
+            "
+          >
+            <span class="material-icons">person</span>
+            Участники
+          </div>
+        </div>
+        <div
+          class="bottom-middle d-flex align-items-center justify-content-center"
+          style="height: 10vh"
+        >
+          <div
+            class="
+              mic-toggle-wrap
+              action-icon-style
+              display-center
+              mr-2
+              cursor-pointer
+            "
+            id="muteMicro"
+          >
+            <span class="material-icons">mic_off</span>
+          </div>
+          <div
+            class="
+              end-call-wrap
+              action-icon-style
+              display-center
+              mr-2
+              cursor-pointer
+            "
+          >
+            <span class="material-icons text-danger">call</span>
+          </div>
+          <div
+            class="
+              video-toggle-wrap
+              action-icon-style
+              display-center
+              cursor-pointer
+            "
+          >
+            <span class="material-icons">videocam_off</span>
+          </div>
+        </div>
+        <div
+          class="
+            bottom-right
+            d-flex
+            justify-content-center
+            align-items-center
+            mr-3
+          "
+        >
+          <div
+            class="
+              present-now-wrap
+              d-flex
+              justify-content-center
+              flex-column
+              align-items-center
+              mr-5
+              cursor-pointer
+              text-danger
+            "
+          >
+            <span class="material-icons"> logout </span>
+            Покинуть встречу
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="public/assets/js/index.js" type="module"></script>
+  </body>
+</html>

@@ -1,12 +1,18 @@
-.jumbotron {
-  background-color: #ffffff;
-  padding-top: 50px;
-}
-
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+video {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.jumbotron {
+  background-color: #ffffff;
+  padding-top: 50px;
 }
 
 .logo {

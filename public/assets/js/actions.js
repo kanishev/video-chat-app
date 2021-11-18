@@ -10,13 +10,14 @@ joinBtn.addEventListener("click", joinMeeting);
 creteBtns.forEach((b) => b.addEventListener("click", createMeeting));
 
 function createMeeting() {
-  let id = Math.floor(Math.random() * 10000000);
-  const path = window.location.origin + "?meetingId=" + id;
+  let id = Math.floor(Math.random() * 100000000);
+  const path = window.location.origin + "/meeting.html?meetingId=" + id;
   window.location.replace(path);
 }
 
 function joinMeeting() {
   const id = joinInput.value;
-  const path = window.location.origin + "?meetingId=" + id;
+
+  const path = window.location.origin + "/meeting.html?meetingId=" + id;
   window.location.replace(path);
 }
