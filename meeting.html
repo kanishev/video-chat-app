@@ -26,22 +26,74 @@
             text-secondary
             w-25
             d-flex
+            flex-column
             align-items-center
-            justify-content-between
-            pl-2
-            pr-2
           "
         >
-          <div class="info-parts pt-2 cursor-pointer">
-            <div class="info-parts__icon">
-              <span class="material-icons">people</span>
+          <div class="info-header d-flex w-100 justify-content-around">
+            <div
+              class="info-parts pt-2 w-50 cursor-pointer text-center parts-btn"
+            >
+              <div class="info-parts__icon">
+                <span class="material-icons">people</span>
+                <small class="info-parts__count">0</small>
+              </div>
             </div>
-            <div class="info-parts__count">2</div>
+            <div
+              class="
+                top-left-chat-wrap
+                pt-2
+                text-center
+                cursor-pointer
+                w-50
+                chat-btn
+              "
+            >
+              <span class="material-icons">message</span>
+            </div>
           </div>
-          <div class="top-left-chat-wrap pt-2 cursor-pointer">
-            <span class="material-icons">message</span>
+          <div
+            id="chat"
+            class="
+              info-chat
+              flex-column
+              h-100
+              w-100
+              justify-content-between
+              d-none
+            "
+          >
+            <div id="messages" class="info-messages pr-2 pl-2"></div>
+            <div class="info-input pr-2 pl-2 pb-2">
+              <form>
+                <div class="form-row">
+                  <div class="col">
+                    <input
+                      id="input"
+                      type="text"
+                      class="form-control"
+                      placeholder="Last name"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-small btn-outline-danger"
+                  >
+                    <span class="material-icons-outlined"> send </span>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="top-left-tome-wrap"></div>
+          <div id="parts" class="info-parts w-100">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Cras justo odio</li>
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div
@@ -61,6 +113,7 @@
               cursor-pointer
               meeting-details-btn
               flex-column
+              chat-btn
             "
           >
             <span class="material-icons">message</span>
@@ -72,6 +125,7 @@
               cursor-pointer
               meeting-details-btn
               flex-column
+              parts-btn
             "
           >
             <span class="material-icons">person</span>
@@ -144,5 +198,6 @@
       </div>
     </main>
     <script src="public/assets/js/index.js" type="module"></script>
+    <script src="public/assets/js/meeting.js"></script>
   </body>
 </html>

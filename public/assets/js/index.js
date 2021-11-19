@@ -1,13 +1,21 @@
 const socket = io("/");
 const usersVideo = document.getElementById("meeting");
 const roomId = location.search.split("myParam=")[1];
+const textField = document.getElementById("input");
+const element = document.querySelector("form");
+const messages = document.getElementById("messages");
+let videoStream;
 
 var peer = new Peer();
 
 const myVideo = document.createElement("video");
 myVideo.muted = true;
 
-let videoStream;
+element.addEventListener("submit", (event) => {
+  event.preventDefault();
+  socket.emit("message", textField.value);
+  textField.value = "";
+});
 
 navigator.mediaDevices
   .getUserMedia({
@@ -21,9 +29,9 @@ navigator.mediaDevices
     peer.on("call", (call) => {
       call.answer(stream);
       const video = document.createElement("video");
+      video.muted = true;
 
       call.on("stream", (videoStream) => {
-        console.log("11121");
         addVideoStream(video, videoStream);
       });
     });
@@ -37,8 +45,18 @@ peer.on("open", (id) => {
   socket.emit("join-room", roomId, id);
 });
 
+socket.on("createMessage", (message) => {
+  messages.innerHTML += `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+  <div class="d-flex w-100 justify-content-between">
+    <h6 class="mb-1">List group item heading</h6>
+    <small>${new Date().getHours() + ":" + new Date().getMinutes()}</small>
+  </div>
+  <p class="mb-1">${message}</p>
+</a>
+`;
+});
+
 function connectUser(userId, stream) {
-  console.log(stream);
   const call = peer.call(userId, stream);
   const video = document.createElement("video");
   call.on("stream", (videoStream) => {
@@ -49,11 +67,9 @@ function connectUser(userId, stream) {
 function addVideoStream(video, stream) {
   video.srcObject = stream;
   video.addEventListener("loadedmetadata", () => {
-    console.log("loaded");
     video.id = Math.random() * 10;
     video.play();
   });
 
   usersVideo.append(video);
-  console.log(usersVideo);
 }

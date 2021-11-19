@@ -7,6 +7,7 @@ document.querySelector(".focus-btn").onclick = function () {
 };
 
 joinBtn.addEventListener("click", joinMeeting);
+
 creteBtns.forEach((b) => b.addEventListener("click", createMeeting));
 
 function createMeeting() {
