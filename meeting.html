@@ -34,9 +34,9 @@
             <div
               class="info-parts pt-2 w-50 cursor-pointer text-center parts-btn"
             >
-              <div class="info-parts__icon">
+              <div class="info-parts">
                 <span class="material-icons">people</span>
-                <small class="info-parts__count">0</small>
+                <small id="userCount" class="info-parts__count">0</small>
               </div>
             </div>
             <div
@@ -63,7 +63,7 @@
               d-none
             "
           >
-            <div id="messages" class="info-messages pr-2 pl-2"></div>
+            <div id="messages" class="info-messages"></div>
             <div class="info-input pr-2 pl-2 pb-2">
               <form>
                 <div class="form-row">
@@ -86,13 +86,7 @@
             </div>
           </div>
           <div id="parts" class="info-parts w-100">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Morbi leo risus</li>
-              <li class="list-group-item">Porta ac consectetur ac</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
+            <ul class="parts-list list-group list-group-flush"></ul>
           </div>
         </div>
       </div>

@@ -9,7 +9,10 @@ let videoStream;
 
 var peer = new Peer();
 const peers = {};
-let user = null;
+let username = null;
+let userList = [];
+
+initUser();
 
 document.querySelector(".logout").addEventListener("click", () => {
   socket.disconnect();
@@ -19,6 +22,7 @@ document.querySelector(".mic-toggle").addEventListener("click", muteUnmute);
 document.querySelector(".video-toggle").addEventListener("click", playStop);
 
 const myVideo = document.createElement("video");
+
 myVideo.muted = true;
 
 navigator.mediaDevices
@@ -41,31 +45,30 @@ navigator.mediaDevices
     });
 
     socket.on("user-connected", (userId) => {
-      user = userId;
       connectUser(userId, stream);
     });
   });
 
 peer.on("open", (id) => {
-  console.log(roomId);
-  socket.emit("join-room", roomId, id);
+  socket.emit("join-room", roomId, id, username);
+  socket.emit("get-users");
 });
 
-socket.on("user-disconnected", (userId) => {
+socket.on("user-disconnected", (userId, users) => {
+  console.log(users);
   removeVideoStream(userId);
+  updateUserList(users);
 });
 
-function removeVideoStream(id) {
-  if (peer[id]) {
-    peer[id].close();
-  }
-  document.getElementById(id).remove();
-}
+socket.on("getUsers", (users) => {
+  userList = users;
+  updateUserList(users);
+});
 
-socket.on("createMessage", (message) => {
+socket.on("createMessage", (message, user) => {
   messages.innerHTML += `<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
   <div class="d-flex w-100 justify-content-between">
-    <h6 class="mb-1">List group item heading</h6>
+    <h6 class="mb-1">${user}</h6>
     <small>${new Date().getHours() + ":" + new Date().getMinutes()}</small>
   </div>
   <p class="mb-1">${message}</p>
@@ -73,8 +76,17 @@ socket.on("createMessage", (message) => {
 `;
 });
 
+function removeVideoStream(id) {
+  if (peer[id]) {
+    peer[id].close();
+  }
+  document.getElementById(id).remove();
+  //
+}
+
 function connectUser(userId, stream) {
   const call = peer.call(userId, stream);
+
   const video = document.createElement("video");
   call.on("stream", (videoStream) => {
     addVideoStream(video, videoStream, userId);
@@ -97,17 +109,29 @@ function addVideoStream(video, stream, userId) {
   usersVideo.append(video);
 }
 
-function removeVideo() {
-  // console.log(user);
-  // const video = document.getElementById(user);
-  // video.remove();
-}
-
 element.addEventListener("submit", (event) => {
   event.preventDefault();
-  socket.emit("message", textField.value);
-  textField.value = "";
+
+  if (textField.value) {
+    socket.emit("message", textField.value.trim(), user.name);
+    textField.value = "";
+  }
 });
+
+function initUser() {
+  username = prompt("Введите ваше имя:");
+}
+
+function updateUserList(users) {
+  document.querySelector(".parts-list").innerHTML = "";
+  users.forEach((u) => {
+    const html = `<li class="list-group-item d-flex"><span class="material-icons pr-2">person</span>${u.name}</li>`;
+    console.log(document.querySelector(".parts-list"));
+    document.querySelector(".parts-list").innerHTML += html;
+  });
+
+  document.getElementById("userCount").textContent = users.length;
+}
 
 function muteUnmute() {
   const enabled = videoStream.getAudioTracks()[0].enabled;
@@ -155,7 +179,6 @@ function setStopVideo() {
 const setPlayVideo = () => {
   const html = `
   <span class="material-icons">videocam_off</span>
-
   `;
   document.querySelector(".video-toggle").innerHTML = html;
 };
