@@ -16,7 +16,8 @@ video {
 }
 
 .logo {
-  height: 43px;
+  width: 43px;
+  object-fit: cover;
 }
 
 .navbar-brand {
