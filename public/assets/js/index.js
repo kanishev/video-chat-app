@@ -7,7 +7,9 @@ const messages = document.getElementById("messages");
 
 let videoStream;
 
-var peer = new Peer();
+var peer = new Peer(undefined, {
+  port: 443,
+});
 const peers = {};
 let username = null;
 let userList = [];
