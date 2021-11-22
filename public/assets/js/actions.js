@@ -19,6 +19,10 @@ function createMeeting() {
 function joinMeeting() {
   const id = joinInput.value;
 
-  const path = window.location.origin + "/meeting.html?meetingId=" + id;
-  window.location.replace(path);
+  if (joinInput.value) {
+    const path = window.location.origin + "/meeting.html?meetingId=" + id;
+    window.location.replace(path);
+  } else {
+    alert("Укажите id встречи");
+  }
 }

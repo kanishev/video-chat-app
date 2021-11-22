@@ -1,7 +1,19 @@
 const chatBtns = document.querySelectorAll(".chat-btn");
+const showBtns = document.querySelectorAll(".show-btn");
 const partsBtns = document.querySelectorAll(".parts-btn");
 const chat = document.getElementById("chat");
 const parts = document.getElementById("parts");
+const drawer = document.querySelector(".info");
+
+showBtns.forEach((b) =>
+  b.addEventListener("click", function () {
+    if (drawer.style.right == "-275px") {
+      drawer.style.right = 0;
+    } else {
+      drawer.style.right = "-275px";
+    }
+  })
+);
 
 chatBtns.forEach((b) =>
   b.addEventListener("click", function () {

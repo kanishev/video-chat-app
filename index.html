@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="/public/assets/css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-md">
-      <img src="/public/assets/images/logo.png" class="logo" alt="logo" />
-      <a href="#" class="navbar-brand text-dark">My Meet</a>
-      <div class="collapse navbar-collapse justify-content-end">
-        <ul class="navbar-nav mr-0">
+    <nav class="navbar">
+      <div class="navbar-icon d-flex align-items-center">
+        <img src="/public/assets/images/logo.png" class="logo" alt="logo" />
+
+        <a href="#" class="navbar-brand text-dark">My Meet</a>
+      </div>
+      <div>
+        <ul class="navbar-nav mr-0 flex-row">
           <li class="nav-item">
             <button
               class="
@@ -42,22 +45,46 @@
     </nav>
 
     <main class="pt-5">
-      <div class="jumbotron h-100 d-flex justify-content-between">
-        <div class="container w-50 d-flex flex-column justify-content-between">
-          <h1 class="jumbotron-title">
-            Видеовстречи премиум-класса. Теперь доступны каждому!
-          </h1>
-          <p class="jumbotron-text">
-            Изначально этот продукт создавался как сервис защищенных
-            видеоконференций для бизнеса. Теперь мы сделали его бесплатным и
-            доступным для всех.
-          </p>
-          <ul class="display-center justify-content-start flex-wrap">
-            <li>
+      <div class="container-xl">
+        <div class="jumbotron h-100 d-flex justify-content-between">
+          <div
+            class="container w-50 d-flex flex-column justify-content-between"
+          >
+            <h1 class="jumbotron-title">
+              Видеовстречи премиум-класса. Теперь доступны каждому!
+            </h1>
+            <p class="jumbotron-text">
+              Изначально этот продукт создавался как сервис защищенных
+              видеоконференций для бизнеса. Теперь мы сделали его бесплатным и
+              доступным для всех.
+            </p>
+            <ul class="jumbotron-btn display-center justify-content-between">
+              <li class="">
+                <div
+                  class="text-dark font-weight-bold display-center join-wrapper"
+                  height
+                >
+                  <span class="material-icons mr-2">keyboard</span>
+                  <input
+                    type="text"
+                    placeholder="Enter a code"
+                    style="border: none"
+                    class="join-input"
+                  />
+                </div>
+              </li>
+              <li class="text-dark font-wieght-bold">
+                <button class="btn btn-lg btn-info join-btn">
+                  Присоединиться
+                </button>
+              </li>
+            </ul>
+            <div class="start">
               <button
                 class="
                   btn btn-lg
                   text-light
+                  w-100
                   font-weight-bold
                   display-center
                   create-btn
@@ -67,35 +94,15 @@
                 <span class="material-icons mr-2">video_call</span>
                 Начать встречу
               </button>
-            </li>
-
-            <li class="pl-3">
-              <div
-                class="text-dark font-weight-bold display-center join-wrapper"
-                height
-              >
-                <span class="material-icons mr-2">keyboard</span>
-                <input
-                  type="text"
-                  placeholder="Enter a code"
-                  style="border: none"
-                  class="join-input"
-                />
-              </div>
-            </li>
-            <li class="text-dark pl-4 m-2 font-wieght-bold">
-              <button class="btn btn-lg btn-info join-btn">
-                Присоединиться
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div class="container w-50">
-          <img
-            src="/public/assets/images/main.png"
-            alt="people"
-            class="signin-image"
-          />
+            </div>
+          </div>
+          <div class=w-50">
+            <img
+              src="/public/assets/images/main.png"
+              alt="people"
+              class="main-image"
+            />
+          </div>
         </div>
       </div>
     </main>

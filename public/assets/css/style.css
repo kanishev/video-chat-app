@@ -1,3 +1,6 @@
+html {
+  overflow: hidden;
+}
 ul {
   list-style: none;
   margin: 0;
@@ -18,6 +21,15 @@ video {
 .logo {
   width: 43px;
   object-fit: cover;
+}
+
+.main-image {
+  display: block;
+  margin-left: auto;
+  max-width: 455px;
+  border: 25px solid white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px grey;
 }
 
 .navbar-brand {
@@ -41,19 +53,16 @@ li.nav-item {
   padding: 0 10px;
 }
 
+.jumbotron-btn li {
+  margin-bottom: 10px;
+}
+
 .jumbotron-title {
   font-size: 2rem;
 }
 
 .jumbotron-text {
   font-size: 20px;
-}
-
-.signin-image {
-  height: 390px;
-  border: 25px solid white;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px grey;
 }
 
 .join-wrapper {
@@ -64,6 +73,7 @@ li.nav-item {
 }
 
 .join-input {
+  width: 100%;
   outline: none;
 }
 
@@ -93,7 +103,12 @@ li.nav-item {
 }
 
 .info {
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 275px;
+  transition: 0.4s ease-in-out;
 }
 
 .info-parts {
@@ -130,6 +145,7 @@ li.nav-item {
 .bottom-block {
   padding: 0 20px;
   box-shadow: 0 0 1px #000000;
+  height: 10vh;
   z-index: 2;
 }
 
@@ -158,4 +174,67 @@ li.nav-item {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 991.98px) {
+  .jumbotron {
+    flex-direction: column-reverse;
+  }
+
+  .jumbotron-title {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .jumbotron-text {
+    text-align: center;
+  }
+
+  .main-image {
+    margin: 0 auto;
+  }
+
+  .jumbotron-btn {
+    flex-wrap: wrap;
+  }
+
+  .jumbotron-btn li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .jumbotron-btn button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    width: 100% !important;
+  }
+
+  .top-block {
+    justify-content: center;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar-icon {
+    margin-bottom: 10px;
+  }
+  .main-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  .cursor-pointer {
+    padding: 0;
+  }
 }

@@ -55,7 +55,6 @@ peer.on("open", (id) => {
 });
 
 socket.on("user-disconnected", (userId, users) => {
-  console.log(users);
   removeVideoStream(userId);
   updateUserList(users);
 });
@@ -113,7 +112,7 @@ element.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (textField.value) {
-    socket.emit("message", textField.value.trim(), user.name);
+    socket.emit("message", textField.value.trim(), username);
     textField.value = "";
   }
 });
@@ -126,7 +125,6 @@ function updateUserList(users) {
   document.querySelector(".parts-list").innerHTML = "";
   users.forEach((u) => {
     const html = `<li class="list-group-item d-flex"><span class="material-icons pr-2">person</span>${u.name}</li>`;
-    console.log(document.querySelector(".parts-list"));
     document.querySelector(".parts-list").innerHTML += html;
   });
 
