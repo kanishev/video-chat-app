@@ -82,7 +82,6 @@ function removeVideoStream(id) {
     peer[id].close();
   }
   document.getElementById(id).remove();
-  //
 }
 
 function connectUser(userId, stream) {
