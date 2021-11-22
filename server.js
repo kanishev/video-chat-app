@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const { ExpressPeerServer } = require("peer");
 
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
   console.log("started at 3000 PORT...");
 });
 
