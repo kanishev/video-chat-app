@@ -24,6 +24,7 @@ document.querySelector(".mic-toggle").addEventListener("click", muteUnmute);
 document.querySelector(".video-toggle").addEventListener("click", playStop);
 
 const myVideo = document.createElement("video");
+myVideo.muted = true;
 
 navigator.mediaDevices
   .getUserMedia({
