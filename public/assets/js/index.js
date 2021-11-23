@@ -25,8 +25,6 @@ document.querySelector(".video-toggle").addEventListener("click", playStop);
 
 const myVideo = document.createElement("video");
 
-myVideo.muted = true;
-
 navigator.mediaDevices
   .getUserMedia({
     video: true,
@@ -39,7 +37,6 @@ navigator.mediaDevices
     peer.on("call", (call) => {
       call.answer(stream);
       const video = document.createElement("video");
-      video.muted = true;
 
       call.on("stream", (videoStream) => {
         addVideoStream(video, videoStream);
@@ -88,7 +85,6 @@ function connectUser(userId, stream) {
   const call = peer.call(userId, stream);
 
   const video = document.createElement("video");
-  video.muted = true;
 
   call.on("stream", (videoStream) => {
     addVideoStream(video, videoStream, userId);
