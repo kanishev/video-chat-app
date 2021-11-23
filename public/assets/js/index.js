@@ -88,6 +88,8 @@ function connectUser(userId, stream) {
   const call = peer.call(userId, stream);
 
   const video = document.createElement("video");
+  video.muted = true;
+
   call.on("stream", (videoStream) => {
     addVideoStream(video, videoStream, userId);
   });
