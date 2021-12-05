@@ -15,6 +15,7 @@ video {
 
 .jumbotron {
   background-color: #ffffff;
+  padding: 0;
   padding-top: 50px;
 }
 
@@ -179,6 +180,7 @@ li.nav-item {
 @media (max-width: 991.98px) {
   .jumbotron {
     flex-direction: column-reverse;
+    align-items: center;
   }
 
   .jumbotron-title {

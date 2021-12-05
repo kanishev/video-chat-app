@@ -5,6 +5,14 @@ const chat = document.getElementById("chat");
 const parts = document.getElementById("parts");
 const drawer = document.querySelector(".info");
 
+window.onload = showParts;
+
+function showParts() {
+  parts.classList.remove("d-none");
+  chat.classList.add("d-none");
+  chat.classList.remove("d-flex");
+}
+
 showBtns.forEach((b) =>
   b.addEventListener("click", function () {
     if (drawer.style.right == "-275px") {
@@ -23,10 +31,4 @@ chatBtns.forEach((b) =>
   })
 );
 
-partsBtns.forEach((b) =>
-  b.addEventListener("click", function () {
-    parts.classList.remove("d-none");
-    chat.classList.add("d-none");
-    chat.classList.remove("d-flex");
-  })
-);
+partsBtns.forEach((b) => b.addEventListener("click", showParts));
