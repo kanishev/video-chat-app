@@ -1,5 +1,6 @@
 html {
   overflow: hidden;
+  box-sizing: border-box;
 }
 ul {
   list-style: none;
@@ -11,6 +12,7 @@ video {
   height: 300px;
   width: 400px;
   object-fit: cover;
+  padding: 10px;
 }
 
 .jumbotron {

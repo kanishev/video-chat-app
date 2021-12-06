@@ -1,14 +1,16 @@
 # 💻 Video Chat App 🎬
 
-<!-- ![Material To Do List Demo](/src/assets/cover.gif) -->
+![Главная страница](public/assets/images/preview/preview-1.png "preview-1")
+![Страница встречи](public/assets/images/preview/preview-2.jpg "preview-2")
 
 ## Project Information
 
 An application for convenient user interaction by the use of video and audio streaming in real time.\
-This app provide you:\
+This app provide you:
 
-- Create rooms by uniq id or join the meeting by id;\
-- Use your own computer camera and audio system to communicate with other members;\
+- Create rooms by uniq id or join the meeting by id;
+- Use your own computer camera and audio system to communicate with other members;
+- Mute your audio and video;
 - Send messages by using a private chat connected into current room;
 
 ### Technologies Used
