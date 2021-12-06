@@ -13,16 +13,22 @@ This app provide you:
 - Mute your audio and video;
 - Send messages by using a private chat connected into current room;
 
+## Demo
+
+🌐 https://morning-everglades-75841.herokuapp.com
+
 ### Technologies Used
 
-| Technology | Description                                                                                                                                                                                                                                                     | Link 🌐                  |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| JavaScript | High Level, Dynamic, Interpreted Language                                                                                                                                                                                                                       | ----                     |
-| NodeJS     | Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.                                                                                                                                                                                         | https://nodejs.org/en    |
-| Socket.IO  | Bidirectional and low-latency communication for every platform                                                                                                                                                                                                  | https://socket.io        |
-| ExpressJS  | Fast, unopinionated, minimalist web framework for Node.js.                                                                                                                                                                                                      | https://expressjs.com    |
-| PeerJS     | PeerJS simplifies WebRTC peer-to-peer data, video, and audio calls.                                                                                                                                                                                             | https://peerjs.com       |
-| Bootstrap  | Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins. | https://getbootstrap.com |
+| Technology | Description                                                                                                                                                                         | Link 🌐                |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| JavaScript | High Level, Dynamic, Interpreted Language                                                                                                                                           | ----                   |
+| NodeJS     | Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.                                                                                                             | https://nodejs.org/en  |
+| Socket.IO  | Bidirectional and low-latency communication for every platform                                                                                                                      | https://socket.io      |
+| ExpressJS  | Fast, unopinionated, minimalist web framework for Node.js.                                                                                                                          | https://expressjs.com  |
+| PeerJS     | PeerJS simplifies WebRTC peer-to-peer data, video, and audio calls.                                                                                                                 | https://peerjs.com     |
+| Heroku     | Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — we're the fastest way to go from idea to URL, bypassing all those infrastructure headaches. | https://www.heroku.com |
+
+| Bootstrap | Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins. | https://getbootstrap.com |
 
 ## Project setup
 
