@@ -1,6 +1,6 @@
 # 💻 Video Chat App 🎬
 
-![Главная страница](public/assets/images/preview/preview-1.png "preview-1")
+![Главная страница](public/assets/images/preview/preview-1.jpg "preview-1")
 ![Страница встречи](public/assets/images/preview/preview-2.jpg "preview-2")
 
 ## Project Information
