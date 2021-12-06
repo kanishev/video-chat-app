@@ -1,29 +1,32 @@
-# 🦠 Covid-19 Global Statistics App 🦠
+# 💻 Video Chat App 🎬
 
-![Material To Do List Demo](/src/assets/cover.gif)
+<!-- ![Material To Do List Demo](/src/assets/cover.gif) -->
 
 ## Project Information
 
-This app provide you an ability to observe the actual covid-19 world state.\
-You can observe the global rates for the last 6 months of the current year or choose the particular country and watch its separate covid-19 data dynamically.
+An application for convenient user interaction by the use of video and audio streaming in real time.\
+This app provide you:\
 
-### API
-
-🌍 The application retrieves data from [covid19api.com](https://covid19api.com)\
-⚡ Easy and beautiful charts with Chart.js and Vue.js [vue-charts](https://vue-chartjs.org/)
+- Create rooms by uniq id or join the meeting by id;\
+- Use your own computer camera and audio system to communicate with other members;\
+- Send messages by using a private chat connected into current room;
 
 ### Technologies Used
 
-| Technology | Description                                                                                                                                                                                                                                                     | Link 🌐                   |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| JavaScript | High Level, Dynamic, Interpreted Language                                                                                                                                                                                                                       | ----                      |
-| Bootstrap  | Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins. | https://getbootstrap.com/ |
+| Technology | Description                                                                                                                                                                                                                                                     | Link 🌐                  |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| JavaScript | High Level, Dynamic, Interpreted Language                                                                                                                                                                                                                       | ----                     |
+| NodeJS     | Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.                                                                                                                                                                                         | https://nodejs.org/en    |
+| Socket.IO  | Bidirectional and low-latency communication for every platform                                                                                                                                                                                                  | https://socket.io        |
+| ExpressJS  | Fast, unopinionated, minimalist web framework for Node.js.                                                                                                                                                                                                      | https://expressjs.com    |
+| PeerJS     | PeerJS simplifies WebRTC peer-to-peer data, video, and audio calls.                                                                                                                                                                                             | https://peerjs.com       |
+| Bootstrap  | Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins. | https://getbootstrap.com |
 
 ## Project setup
 
 ```
-npm install\
-heroku create\
+npm install
+heroku create
 heroku git:clone -a morning-everglades-75841
 
 ```
@@ -39,13 +42,3 @@ npm run start
 ```
 git push heroku main
 ```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
